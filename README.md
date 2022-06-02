@@ -7,7 +7,7 @@ Special Relativistic Magnetohydridynamics Code : SR-CANS+
 
 Output valiables: ro(rest mass density of fluid),pr,vx,vy,vz(4-velocity.),bx,by,bz(laboratory B-vector)
 
-HLL Rieman Solver, HLLC Rieman Solver(Hokkila and Janhunen 2007, Kim and Balsara 2014 (注：エラーあるかも))
+HLL Rieman Solver, HLLC Rieman Solver(Honkkila and Janhunen 2007, Kim and Balsara 2014 (注：エラーあるかも))
 
 Primitve Ricover (Mignone, Bodo 2006, first guess: Mignone, Mckinney 2007)
 
