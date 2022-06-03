@@ -1,6 +1,0 @@
-all :
-	cd common; make
-
-clean :
-	cd common; make clean
-	rm -f *.a

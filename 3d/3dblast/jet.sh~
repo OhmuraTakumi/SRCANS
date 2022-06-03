@@ -1,9 +1,0 @@
-#PBS -N kh
-#PBS -l nodes=2
-#PBS -l walltime=12:00:00
-#PBS -M ohmura@phys.kyushu-u.ac.jp
-#PBS -q bulk-b
-
-cd /work/ohmuratk/kh
-aprun -n 64 ./a.out
- 

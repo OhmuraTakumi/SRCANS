@@ -32,27 +32,6 @@ contains
   real(8),dimension(ix,jx,kx),intent(inout) :: phi
   real(8),dimension(ix,jx,kx),intent(inout) :: eta
 
-! !-- using flux
-!   real(8),dimension(ix,jx,kx) :: ro1,pr1,vx1,vy1,vz1
-!   real(8),dimension(ix,jx,kx) :: bx1,by1,bz1
-!   real(8),dimension(ix,jx,kx) :: phi1
-! !-conserved variable
-!   real(8),dimension(ix,jx,kx) :: dro,rx,ry,rz,ee
-!   real(8),dimension(ix,jx,kx) :: dro1,rx1,ry1,rz1,ee1
-! !-surface variables
-!   real(8),dimension(ix,jx,kx,2) :: row,prw,vxw,vyw,vzw
-!   real(8),dimension(ix,jx,kx,2) :: bxw,byw,bzw,phiw
-!   real(8),dimension(ix,jx,kx) :: bx_m,by_m,bz_m,phi_m
-! !-Numerical flux
-! !x-component
-!   real(8),dimension(ix,jx,kx) :: frox,feex,frxx,fryx,frzx
-!   real(8),dimension(ix,jx,kx) :: fbyx,fbzx,fbxx,fphix
-!
-! !-other temporary variables
-!   integer :: mdir
-!   integer :: i,j,k,n
-!   real(8), parameter :: fac=1.D0/12.D0
-!   real(8) :: dtodx,k1,k2
 !-- using flux
   real(8),dimension(ix,jx,kx) :: ro1,pr1,vx1,vy1,vz1
   real(8),dimension(ix,jx,kx) :: bx1,by1,bz1
@@ -121,10 +100,10 @@ contains
        ,bx_m,phi_m,ch)
   call flux_calc__glm(bx_m,phi_m,ch,fbxx,fphix,ix,jx,kx)
 
-  ! call flux_calc__hll(row,prw,vxw,vyw,vzw,bx_m,byw,bzw,gm,margin,ix,jx,kx &
-  !                    ,frox,feex,frxx,fryx,frzx,fbyx,fbzx)
-  call flux_calc__hllc(row,prw,vxw,vyw,vzw,bx_m,byw,bzw,gm,margin,ix,jx,kx &
-                   ,frox,feex,frxx,fryx,frzx,fbyx,fbzx)
+  call flux_calc__hll(row,prw,vxw,vyw,vzw,bx_m,byw,bzw,gm,margin,ix,jx,kx &
+                     ,frox,feex,frxx,fryx,frzx,fbyx,fbzx)
+  ! call flux_calc__hllc(row,prw,vxw,vyw,vzw,bx_m,byw,bzw,gm,margin,ix,jx,kx &
+  !                  ,frox,feex,frxx,fryx,frzx,fbyx,fbzx)
 
   mdir = 2
   ! call lr_state__MP5(mdir,ix,jx,kx,ro,pr &
@@ -142,10 +121,10 @@ contains
   
   call flux_calc__glm(by_m,phi_m,ch,fbyy,fphiy,ix,jx,kx)
   
-  ! call flux_calc__hll(row,prw,vyw,vzw,vxw,by_m,bzw,bxw,gm,margin,ix,jx,kx &
-  !      ,froy,feey,fryy,frzy,frxy,fbzy,fbxy)
-  call flux_calc__hllc(row,prw,vyw,vzw,vxw,by_m,bzw,bxw,gm,margin,ix,jx,kx &
-                   ,froy,feey,fryy,frzy,frxy,fbzy,fbxy)
+  call flux_calc__hll(row,prw,vyw,vzw,vxw,by_m,bzw,bxw,gm,margin,ix,jx,kx &
+       ,froy,feey,fryy,frzy,frxy,fbzy,fbxy)
+  ! call flux_calc__hllc(row,prw,vyw,vzw,vxw,by_m,bzw,bxw,gm,margin,ix,jx,kx &
+  !                  ,froy,feey,fryy,frzy,frxy,fbzy,fbxy)
 
   
   mdir = 3
@@ -164,10 +143,10 @@ contains
   
   call flux_calc__glm(bz_m,phi_m,ch,fbzz,fphiz,ix,jx,kx)
   
-  ! call flux_calc__hll(row,prw,vzw,vxw,vyw,bz_m,bxw,byw,gm,margin,ix,jx,kx &
-  !      ,froz,feez,frzz,frxz,fryz,fbxz,fbyz)
-  call flux_calc__hllc(row,prw,vzw,vxw,vyw,bz_m,bxw,byw,gm,margin,ix,jx,kx &
-                   ,froz,feez,frzz,frxz,fryz,fbxz,fbyz)    
+  call flux_calc__hll(row,prw,vzw,vxw,vyw,bz_m,bxw,byw,gm,margin,ix,jx,kx &
+       ,froz,feez,frzz,frxz,fryz,fbxz,fbyz)
+  ! call flux_calc__hllc(row,prw,vzw,vxw,vyw,bz_m,bxw,byw,gm,margin,ix,jx,kx &
+  !                  ,froz,feez,frzz,frxz,fryz,fbxz,fbyz)    
 
 
 !-----Step 2.---------------------------------------------------------|

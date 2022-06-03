@@ -126,14 +126,14 @@ contains
         do i=1,ix
            ! if( x(i) < xmin+0.5d0*(xmax-xmin))then
            if( x(i) < 0.5d0)then              
-              ro(i,j,k) = 1.00001d0
-              pr(i,j,k) = 0.1d0
-              vx(i,j,k) = 0.999d0
+              ro(i,j,k) = 1.d0
+              pr(i,j,k) = 1d0
+              vx(i,j,k) = 0.d0
               vy(i,j,k) = 0.d0
               vz(i,j,k) = 0.d0
-              bx(i,j,k) = 10d0
-              by(i,j,k) = 7d0
-              bz(i,j,k) = 7d0
+              bx(i,j,k) = 0.5d0
+              by(i,j,k) = 1d0
+              bz(i,j,k) = 0d0
               phi(i,j,k) = 0.d0
               eta(i,j,k) = 0.d0
 
@@ -142,14 +142,14 @@ contains
               vy(i,j,k) = lg*vy(i,j,k)
               vz(i,j,k) = lg*vz(i,j,k)
            else
-              ro(i,j,k) = 1.00001d0
+              ro(i,j,k) = 0.125d0
               pr(i,j,k) = 0.1d0
-              vx(i,j,k) = -0.999d0
+              vx(i,j,k) = 0d0
               vy(i,j,k) = 0.d0
               vz(i,j,k) = 0.d0
-              bx(i,j,k) = 10d0
-              by(i,j,k) = -7d0
-              bz(i,j,k) = -7d0
+              bx(i,j,k) = 0.5d0
+              by(i,j,k) = -1d0
+              bz(i,j,k) = 0d0
               phi(i,j,k) = 0.d0
               eta(i,j,k) = 0.d0
 

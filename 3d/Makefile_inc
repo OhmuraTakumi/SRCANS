@@ -1,2 +1,3 @@
 FC = mpif90 #ftn
 FFLAGS = -O2 -fopenmp
+# FFLAGS = -O2

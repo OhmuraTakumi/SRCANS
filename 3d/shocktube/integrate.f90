@@ -125,8 +125,7 @@ contains
                      ,frox,feex,frxx,fryx,frzx,fbyx,fbzx)
   ! call flux_calc__hllc(row,prw,vxw,vyw,vzw,bx_m,byw,bzw,gm,margin,ix,jx,kx &
   !                  ,frox,feex,frxx,fryx,frzx,fbyx,fbzx)
-
-  mdir = 2
+  ! mdir = 2
 
   ! call lr_state__MP5(mdir,ix,jx,kx,ro,pr &
   !      ,vy,vz,vx,by,bz,bx,phi &

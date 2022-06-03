@@ -126,7 +126,7 @@ contains
      do j=1,jx
         do i=1,ix
            rr = sqrt(x(i)*x(i)+y(j)*y(j)+z(k)*z(k))
-           if( rr  < 0.2d0)then              
+           if( rr  < 0.1d0)then              
               ro(i,j,k) = 30d0
               pr(i,j,k) = 30d0
               vx(i,j,k) = 0.d0
@@ -144,7 +144,7 @@ contains
               vz(i,j,k) = lg*vz(i,j,k)
            else
               ro(i,j,k) = 1d0
-              pr(i,j,k) = 1d0
+              pr(i,j,k) = 0.1d0
               vx(i,j,k) = 0.d0
               vy(i,j,k) = 0.d0
               vz(i,j,k) = 0.d0
