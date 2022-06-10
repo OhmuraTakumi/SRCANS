@@ -1,6 +1,15 @@
 # SRCANS
 
 Special Relativistic Magnetohydridynamics Code : SR-CANS+
+---
+2022/6/10
+MPI-IO version 追加
+
+MPI-IO用python読み込みルーチン dac_read_mpiio.py
+
+import dac_read_mpiio from dac_read
+
+変数読み込み Q,x,y,z = dac_read('0001_Q.dac',d=3)
 
 ----
 2022/5/30
